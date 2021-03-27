@@ -4,7 +4,7 @@ import React, {Component} from 'react'
 class Form extends Component {
     initialState = {
       title: '',
-      description: '',
+      status: true,
     }
     
     state = this.initialState
@@ -22,7 +22,7 @@ class Form extends Component {
     }
 
     render() {
-      const { title, description } = this.state;
+      const { title } = this.state;
     
       return (
         <div className="form-container">
@@ -38,17 +38,7 @@ class Form extends Component {
                   onChange={this.handleChange} />
                 <br />
                 <br />
-                <label htmlFor="description">Description</label>
-                <br />
-                <input
-                  type="text"
-                  name="description"
-                  id="description"
-                  value={description}
-                  onChange={this.handleChange} />
-
-                <br />
-                <br />
+                
                 <input type="button" value="Submit" onClick={this.submitForm} />
             </form>
         </div>

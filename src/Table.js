@@ -7,7 +7,8 @@ const TableHeader = () => {
       <thead>
         <tr>
           <th>Title</th>
-          <th>Description</th>
+          <th>Status</th>
+          <th>Actions</th>
         </tr>
       </thead>
     )
@@ -18,9 +19,10 @@ const TableBody = (props) => {
     return (
         <tr key={index}>
           <td>{row.title}</td>
-          <td>{row.description}</td>
+          <td>{row.status ? "TODO" : "COMPLETE"}</td>
           <td>
-              <button onClick={() => props.removeTask(index)}>Delete</button>
+                <button onClick={() => props.completeTask(index)}>Check</button>
+                <button onClick={() => props.removeTask(index)}>Delete</button>
           </td>
         </tr>
       )
@@ -31,9 +33,9 @@ const TableBody = (props) => {
 }
 
 const Table = (props) =>  {
-    const {taskData, removeTask} = props
+    const {taskData, removeTask, completeTask} = props
 
-    if (taskData.length == 0) {
+    if (taskData.length === 0) {
         return (
             <div className="table-container">
                 <h2>No tasks yet</h2>
@@ -48,6 +50,7 @@ const Table = (props) =>  {
             <TableBody
                 taskData={taskData}
                 removeTask={removeTask}
+                completeTask={completeTask}
             />
           </table>
         </div>
