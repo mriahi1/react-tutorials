@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './tictac.js';
+import Game from './tictac'
+import App from './App'
+import Api from './Api'
+import TodoApp from './Todo'
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <div>
+        <h1 className="page-title">Learning React</h1>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+        <div className="section">
+            <h2>ReactJs tutorial: Tic Tac Toe </h2>
+            <Game />
+            <hr/>
+        </div>
+
+        <div className="section">
+            <h2>ReactJs Tutorial: Tania jobs</h2>
+            <App /> 
+            <hr/>
+        </div>
+
+        <div className="section">
+            <h2>ReactJs Tutorial: Wikipedia API</h2>
+            <Api />
+            <hr/>
+        </div>
+
+        <div className="section">
+            <h2>ReactJs Tutorial: DigitalOcean Todo</h2>
+            <TodoApp />
+            <hr/>
+        </div>
+    </div>, 
+    document.getElementById('root')
+);
