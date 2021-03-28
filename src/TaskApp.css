@@ -1,0 +1,20 @@
+.form-container {
+    background: lightgrey;
+    width: 30%;
+    padding:40px;
+    margin-top: 20px;
+    padding-top:10px;
+    float:right;
+}
+
+.chart {
+    padding:40px;
+    margin-top: 20px;
+    padding-top:10px;
+    float:right;
+}
+
+.table-container {
+    width: 50%;
+    min-height:400px;
+}
